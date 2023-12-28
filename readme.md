@@ -53,3 +53,50 @@ Execute the following command:
 ```
 npm run watch
 ```
+
+## API
+
+The http method that is used for the endpoint is `POST` instead of `GET` Because the querystring parameters length is large, another reason is to make it easier for front-end and backend to send and receive the search request payload.
+
+### Request Schema
+{
+  "page": number,
+  "pageSize": number,
+  "facets": {
+    "authors": { "operator": "AND", "value":string[], "typeAhead": string },
+    "journals": {
+      "operator": "OR",
+      "value": string[],
+      "typeAhead": string
+    },
+    "languages": { "operator": "OR", "value": string[], "typeAhead": string }
+  },
+  "sortBy": "RELEVANCE_SCORE|DATE"
+}
+
+All properties are optionals.
+* **typeAhead**: typeahead text
+
+### Example:
+```
+POST <HOST>/api/articles/search
+{
+  "page": 1,
+  "pageSize": 20,
+  "facets": {
+    "authors": { "operator": "AND", "value": ["S Vaisrub"]},
+    "journals": {
+      "operator": "OR",
+      "value": [
+        "British medical journal",
+        "The New England journal of medicine",
+        "JAMA",
+        "Nature",
+        "Biochemical and biophysical research communications"
+      ],
+    },
+    "languages": { "operator": "OR", "value": ["eng"]}
+  },
+  "sortBy": "RELEVANCE_SCORE"
+}
+```
