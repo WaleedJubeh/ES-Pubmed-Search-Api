@@ -59,6 +59,7 @@ npm run watch
 The http method that is used for the endpoint is `POST` instead of `GET` Because the querystring parameters length is large, another reason is to make it easier for front-end and backend to send and receive the search request payload.
 
 ### Request Schema
+```
 {
   "page": number,
   "pageSize": number,
@@ -73,6 +74,7 @@ The http method that is used for the endpoint is `POST` instead of `GET` Because
   },
   "sortBy": "RELEVANCE_SCORE|DATE"
 }
+```
 
 All properties are optionals.
 * **typeAhead**: typeahead text
