@@ -1,0 +1,9 @@
+{
+    "PORT": 4000,
+    "ES": {
+        "USERNAME": "",
+        "PASSWORD": "",
+        "HOST": "localhost:9200",
+        "PROTOCOL": "https"
+    }
+}

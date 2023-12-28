@@ -1,0 +1,23 @@
+{
+  "name": "search-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "nodemon index.js",
+    "load-dataset": "node .\\scripts\\load-dataset\\load-dataset.js"
+  },
+  "keywords": [],
+  "author": "Waleed Jubeh",
+  "license": "ISC",
+  "dependencies": {
+    "@elastic/elasticsearch": "^8.10.0",
+    "config": "^3.3.7",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  }
+}
